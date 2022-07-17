@@ -89,8 +89,8 @@ class BeerControllerTest {
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
                 .andExpect(jsonPath("$.id", is(validBeer.getId().toString())))
                 .andExpect(jsonPath("$.beerName", is("Beer1")))
-//                .andExpect(jsonPath("$.createdDate",
-//                        is(dateTimeFormatter.format(validBeer.getCreatedDate()))))
+                .andExpect(jsonPath("$.createdDate",
+                        is(dateTimeFormatter.format(validBeer.getCreatedDate()))))
                 .andReturn();
 
         System.out.println(result.getResponse().getContentAsString());
@@ -147,11 +147,11 @@ class BeerControllerTest {
 
     public MappingJackson2HttpMessageConverter jackson2HttpMessageConverter() {
         ObjectMapper objectMapper = new ObjectMapper();
-//        objectMapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
-//        objectMapper.configure(SerializationFeature.WRITE_DATE_TIMESTAMPS_AS_NANOSECONDS, true);
-//        objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
-//
-//        objectMapper.registerModule(new JavaTimeModule());
+        objectMapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
+        objectMapper.configure(SerializationFeature.WRITE_DATE_TIMESTAMPS_AS_NANOSECONDS, true);
+        objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
+
+        objectMapper.registerModule(new JavaTimeModule());
 
         return new MappingJackson2HttpMessageConverter(objectMapper);
     }
