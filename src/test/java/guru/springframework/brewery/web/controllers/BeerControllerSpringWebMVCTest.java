@@ -41,6 +41,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 
+//Test only a slice of web layer
 @WebMvcTest(BeerController.class)
 public class BeerControllerSpringWebMVCTest {
     @MockBean
