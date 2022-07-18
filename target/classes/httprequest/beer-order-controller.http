@@ -1,0 +1,9 @@
+GET http://localhost:8080//api/v1/customers/d2b1115a-375e-4da5-93f3-2f3a37ef1f5f/orders
+Accept: application/json
+
+###
+
+GET http://localhost:8080//api/v1/customers/d2b1115a-375e-4da5-93f3-2f3a37ef1f5f/orders/637707ad-1f52-4f4d-bfc5-16a3a89b997d
+Accept: application/json
+
+###

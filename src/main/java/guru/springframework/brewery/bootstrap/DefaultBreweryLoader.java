@@ -111,6 +111,8 @@ public class DefaultBreweryLoader implements CommandLineRunner {
                     .customerName("Test 1").apiKey(UUID.randomUUID())
                     .build());
 
+            System.out.println("Customer: " + testCustomer.getId());
+
             Set<BeerOrderLine> orderLines1 = new HashSet<>();
             orderLines1.add(BeerOrderLine.builder().beer(galaxyCat).orderQuantity(15).quantityAllocated(0).build());
             orderLines1.add(BeerOrderLine.builder().beer(pinball).orderQuantity(7).quantityAllocated(0).build());
@@ -124,6 +126,8 @@ public class DefaultBreweryLoader implements CommandLineRunner {
                     .build());
 
             orderLines1.forEach(line -> line.setBeerOrder(testOrder1));
+
+            System.out.println("testOrder1: " + testOrder1.getId());
 
             beerOrderRepository.save(testOrder1);
         }
